@@ -1,0 +1,14 @@
+<form [formGroup]="correuForm" (ngSubmit)="enviarCorreu()">
+  <label for="destinatari">Destinatari:</label>
+  <input id="destinatari" formControlName="destinatari" />
+
+  <label for="assumpte">Assumpte:</label>
+  <input id="assumpte" formControlName="assumpte" />
+
+  <label for="cos">Cos:</label>
+  <textarea id="cos" formControlName="cos"></textarea>
+
+  <button type="submit" [disabled]="correuForm.invalid || esHotmail()">Enviar</button>
+  <br>
+  <app-mostrar-correu [cos]="cosValue"></app-mostrar-correu>
+</form>
